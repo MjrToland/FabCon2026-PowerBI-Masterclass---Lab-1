@@ -129,6 +129,24 @@ table Customer
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Age Range Order' = ```
+			
+			    SWITCH(
+			        TRUE(),
+			        Customer[Age] < 25, 1,
+			        Customer[Age] < 35, 2,
+			        Customer[Age] < 45, 3,
+			        Customer[Age] < 55, 4,
+			        Customer[Age] < 65, 5,
+			        6
+			    )
+			```
+		formatString: 0
+		lineageTag: 4070231a-bbea-4265-983b-48d75a91ac9d
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Customer-3757b886-e26c-4cec-a550-cdeea37b94d4 = m
 		mode: import
 		source =
