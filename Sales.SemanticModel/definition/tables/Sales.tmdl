@@ -5,9 +5,17 @@ table Sales
 		formatString: #,##0
 		lineageTag: 4ec872f0-a42d-4aa9-bf6b-1ca7c4916336
 
-	measure 'Sales Qty' = sum('Sales'[Quantity])
-		formatString: #,##0
-		lineageTag: c2ff8d96-2f03-4005-84df-91458625b73b
+    measure 'Sales Qty' = sum('Sales'[Quantity])
+        formatString: #,##0
+        lineageTag: c2ff8d96-2f03-4005-84df-91458625b73b
+    
+    measure 'Sales Qty (LY)' = IF ([Sales Qty] > 0, CALCULATE([Sales Qty], SAMEPERIODLASTYEAR('Calendar'[Date])))
+        formatString: #,##0
+        lineageTag: c2ff8d96-2f03-4005-84df-91458625b73b
+    
+    measure 'Sales Qty Avg per Day' = AVERAGEX(VALUES('Calendar'[Date]), [Sales Qty])
+        formatString: #,##0
+        lineageTag: c2ff8d96-2f03-4005-84df-91458625b73b
 
 	measure 'Sales Amount' = SUMX('Sales', 'Sales'[Quantity] * 'Sales'[Net Price])
 		formatString: $ #,##0
