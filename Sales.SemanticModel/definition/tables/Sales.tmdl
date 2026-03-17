@@ -71,6 +71,10 @@ table Sales
 		formatString: $ #,##0
 		lineageTag: 3e5cb67e-a411-476f-ad34-7ec10dfd084d
 
+	measure '# Customers (w/ Sales) +0' = DISTINCTCOUNT('Sales'[CustomerKey])+0
+		formatString: 0
+		lineageTag: ada932ec-30d5-4622-9049-39adf95539fc
+
 	column 'Order Number'
 		dataType: int64
 		formatString: 0
