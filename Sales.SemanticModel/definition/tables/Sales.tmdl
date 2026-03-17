@@ -5,18 +5,10 @@ table Sales
 		formatString: #,##0
 		lineageTag: 4ec872f0-a42d-4aa9-bf6b-1ca7c4916336
 
-    measure 'Sales Qty' = sum('Sales'[Quantity])
-        formatString: #,##0
-        lineageTag: c2ff8d96-2f03-4005-84df-91458625b73b
-        displayFolder: Qty
-    measure 'Sales Qty (LY)' = IF ([Sales Qty] > 0, CALCULATE([Sales Qty], SAMEPERIODLASTYEAR('Calendar'[Date])))
-        formatString: #,##0
-        lineageTag: 01992909-efd5-72c9-9746-d811874a1677
-        displayFolder: Qty
-    measure 'Sales Qty Avg per Day' = AVERAGEX(VALUES('Calendar'[Date]), [Sales Qty])
-        formatString: #,##0
-        lineageTag: 0199290c-54fe-747c-8ddf-c496eafd0d88
-        displayFolder: Qty
+	measure 'Sales Qty' = sum('Sales'[Quantity])
+		formatString: #,##0
+		displayFolder: Qty
+		lineageTag: c2ff8d96-2f03-4005-84df-91458625b73b
 
 	measure 'Sales Amount' = SUMX('Sales', 'Sales'[Quantity] * 'Sales'[Net Price])
 		formatString: $ #,##0
@@ -83,6 +75,16 @@ table Sales
 	measure '# Customers (w/ Sales) +0' = DISTINCTCOUNT('Sales'[CustomerKey])+0
 		formatString: 0
 		lineageTag: ada932ec-30d5-4622-9049-39adf95539fc
+
+	measure 'Sales Qty (LY)' = IF ([Sales Qty] > 0, CALCULATE([Sales Qty], SAMEPERIODLASTYEAR('Calendar'[Date])))
+		formatString: #,##0
+		displayFolder: Qty
+		lineageTag: 01992909-efd5-72c9-9746-d811874a1677
+
+	measure 'Sales Qty Avg per Day' = AVERAGEX(VALUES('Calendar'[Date]), [Sales Qty])
+		formatString: #,##0
+		displayFolder: Qty
+		lineageTag: 0199290c-54fe-747c-8ddf-c496eafd0d88
 
 	column 'Order Number'
 		dataType: int64

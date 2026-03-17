@@ -1,0 +1,30 @@
+createOrReplace
+
+	role 'Store - Canada'
+		modelPermission: read
+
+		tablePermission Store = [Country] == "Canada"
+
+		annotation PBI_Id = 5587cca136da46789bfeb4c2de02c98e
+
+	role 'Store - United States'
+		modelPermission: read
+
+		tablePermission Store = [Country] == "United States"
+
+		annotation PBI_Id = be15f15fb63049e7a3d04c99d7554ba2
+
+	role 'Store - Australia'
+		modelPermission: read
+
+		tablePermission Store = [Country] == "Australia"
+
+		annotation PBI_Id = ab58ddc78428480899f3aab3809b09cb
+
+	role 'Store - United Kingdom'
+		modelPermission: read
+
+		tablePermission Store = [Country] == "United Kingdom"
+
+		annotation PBI_Id = be78aa4e07fa48539ebb7989778c0b72
+

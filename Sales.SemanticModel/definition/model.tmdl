@@ -21,9 +21,12 @@ ref table Product
 ref table Customer
 ref table Store
 ref table About
+ref table 'Time Intelligence'
 
 ref role 'Store - Canada'
 ref role 'Store - United States'
+ref role 'Store - Australia'
+ref role 'Store - United Kingdom'
 
 ref perspective Sales
 

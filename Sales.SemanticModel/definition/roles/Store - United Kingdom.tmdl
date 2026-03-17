@@ -1,0 +1,7 @@
+role 'Store - United Kingdom'
+	modelPermission: read
+
+	tablePermission Store = [Country] == "United Kingdom"
+
+	annotation PBI_Id = be78aa4e07fa48539ebb7989778c0b72
+

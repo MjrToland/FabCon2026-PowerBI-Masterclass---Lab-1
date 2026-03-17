@@ -1,4 +1,5 @@
-table 'Time Intelligence'	
+table 'Time Intelligence'
+	lineageTag: a129a669-d737-45d1-99b5-6978d8b50904
 
 	calculationGroup
 		precedence: 1
@@ -55,7 +56,8 @@ table 'Time Intelligence'
 		calculationItem Current = SELECTEDMEASURE()
 
 	column 'Show as'
-		dataType: string		
+		dataType: string
+		lineageTag: 50514d95-7ef0-4ca7-9ce7-cbf62b09e894
 		summarizeBy: none
 		sourceColumn: Name
 		sortByColumn: Ordinal
@@ -64,7 +66,8 @@ table 'Time Intelligence'
 
 	column Ordinal
 		dataType: int64
-		formatString: 0		
+		formatString: 0
+		lineageTag: 1ff42f51-9e3d-41e8-ae34-1a6249f795ed
 		summarizeBy: none
 		sourceColumn: Ordinal
 
