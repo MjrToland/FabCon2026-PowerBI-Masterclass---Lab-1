@@ -98,7 +98,22 @@
         ]
       }
     },
-    "drillFilterOtherVisuals": true
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
   },
   "filterConfig": {
     "filters": [

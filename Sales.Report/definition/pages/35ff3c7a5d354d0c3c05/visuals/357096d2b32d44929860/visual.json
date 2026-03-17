@@ -5,8 +5,8 @@
     "x": 10.057704112952731,
     "y": 0,
     "z": 0,
-    "height": 720.13161448741562,
-    "width": 765.39128299570291,
+    "height": 720.1316144874156,
+    "width": 765.3912829957029,
     "tabOrder": 0
   },
   "visual": {
@@ -70,6 +70,21 @@
         "isDefaultSort": true
       }
     },
-    "drillFilterOtherVisuals": true
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
   }
 }
